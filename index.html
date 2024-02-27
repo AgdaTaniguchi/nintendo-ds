@@ -1,88 +1,164 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nintendo DS</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="display">
-                <div class="main-content">
-                    <div class="group-audio">
-                        <div class="audio-circle"></div>
-                        <div class="audio-circle"></div>
-                        <div class="audio-circle"></div>
-                        <div class="audio-circle"></div>
-                        <div class="audio-circle"></div>
-                        <div class="audio-circle"></div>
-                    </div>
-                    <div class="screen"></div>
-                    <div class="group-audio">
-                        <div class="audio-circle"></div>
-                        <div class="audio-circle"></div>
-                        <div class="audio-circle"></div>
-                        <div class="audio-circle"></div>
-                        <div class="audio-circle"></div>
-                        <div class="audio-circle"></div>
-                    </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nintendo DS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="display">
+            <div class="main-content">
+                <div class="group-audio">
+                    <div class="audio-circle"></div>
+                    <div class="audio-circle"></div>
+                    <div class="audio-circle"></div>
+                    <div class="audio-circle"></div>
+                    <div class="audio-circle"></div>
+                    <div class="audio-circle"></div>
                 </div>
-            </div>
-            <div class="middle">
-                <div class="middle-container">
-                    <div class="left">
-                        <div class="status">
-                            <div class="status-led" id="status-ethernet"></div>
-                            <div class="status-led" id="status-charge"></div>
-                            <div class="status-led" id="status-power"></div>
-                        </div>
-                    </div>
-                    <div class="center">
-                        <div class="camera"></div>
-                    </div>
-                    <div class="right"></div>
+                <div class="screen">
+                    <iframe id="iframe-top" name="iframe-top" src="applications/home/top.html"></iframe>
                 </div>
-            </div>
-            <div class="display">
-                <div class="main-content">
-                    <div class="controls-left">
-                        <div class="controls-top">
-                            <div class="control-movement top"></div>
-                            <div class="control-movement right"></div>
-                            <div class="control-movement bottom"></div>
-                            <div class="control-movement left"></div>
-                        </div>
-                        <div class="controls-bottom">
-                            <div class="group-button">
-                                <div class="button" id="button-power">
-                                    <img src="media/icons/power.svg">
-                                </div>
-                                <label>power</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="screen"></div>
-                    <div class="controls-right">
-                        <div class="controls-top">
-                            <div class="button control-letter top">X</div>
-                            <div class="button control-letter right">A</div>
-                            <div class="button control-letter bottom">B</div>
-                            <div class="button control-letter left">Y</div>
-                        </div>
-                        <div class="controls-bottom">
-                            <div class="group-button">
-                                <div class="button"></div>
-                                <label>start</label>
-                            </div>
-                            <div class="group-button">
-                                <div class="button"></div>
-                                <label>select</label>
-                            </div>
-                        </div>
-                    </div> 
+                <div class="group-audio">
+                    <div class="audio-circle"></div>
+                    <div class="audio-circle"></div>
+                    <div class="audio-circle"></div>
+                    <div class="audio-circle"></div>
+                    <div class="audio-circle"></div>
+                    <div class="audio-circle"></div>
                 </div>
             </div>
         </div>
-    </body>
+        <div class="middle">
+            <div class="middle-container">
+                <div class="left">
+                    <div class="status">
+                        <div class="status-led" id="status-ethernet"></div>
+                        <div class="status-led" id="status-charge"></div>
+                        <div class="status-led" id="status-power"></div>
+                    </div>
+                </div>
+                <div class="center">
+                    <div class="camera"></div>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class="display">
+            <div class="main-content">
+                <div class="controls-left">
+                    <div class="controls-top">
+                        <div class="control-movement top"></div>
+                        <div class="control-movement right"></div>
+                        <div class="control-movement bottom"></div>
+                        <div class="control-movement left"></div>
+                    </div>
+                    <div class="controls-bottom">
+                        <div class="group-button">
+                            <div class="button" id="button-power">
+                                <img src="media/icons/power.svg">
+                            </div>
+                            <label>power</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen">
+                    <iframe id="iframe-bottom" name="iframe-bottom" src="applications/home/bottom.html"></iframe>
+                </div>
+                <div class="controls-right">
+                    <div class="controls-top">
+                        <div class="button control-letter top">X</div>
+                        <div class="button control-letter right">A</div>
+                        <div class="button control-letter bottom">B</div>
+                        <div class="button control-letter left">Y</div>
+                    </div>
+                    <div class="controls-bottom">
+                        <div class="group-button">
+                            <div class="button"></div>
+                            <label>start</label>
+                        </div>
+                        <div class="group-button">
+                            <div class="button"></div>
+                            <label>select</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const iframeTop = document.getElementById("iframe-top");
+        const iframeBottom = document.getElementById("iframe-bottom");
+
+        function changeApp(pathName) {
+            iframeTop.src = `/applications/${pathName}/top.html`;
+            iframeBottom.src = `/applications/${pathName}/bottom.html`;
+        }
+
+        // changeApp(localStorage.getItem("currentApp") || "home");
+        changeApp("home");
+
+        function shake(duration) {
+            document.querySelector(".container").classList.add("shake-animation");
+            setTimeout(() => {
+                document.querySelector(".container").classList.remove("shake-animation");
+            }, duration);
+        }
+
+        // Receive data from applications
+        window.addEventListener("message", (e) => {
+            switch (e.data.type) {
+                case "changeApp":
+                    localStorage.setItem("currentApp", e.data.pathName);
+                    changeApp(e.data.pathName);
+                    break;
+                case "action":
+                    switch (e.data.action) {
+                        case 'shake':
+                            shake(e.data.duration);
+                            break;
+                    }
+                    break;
+                case "redirect":
+                    location.href = e.data.url;
+                    break;
+            }
+        });
+
+
+        function getHashParams() {
+            var hashParams = {};
+            var e, r = /([^&;=]+)=?([^&;]*)/g,
+                q = window.location.hash.substring(1);
+            while ( e = r.exec(q)) {
+                hashParams[e[1]] = decodeURIComponent(e[2]);
+            }
+            return hashParams;
+        }
+
+        if(getHashParams() != null) {
+            sessionStorage.setItem('spotify_access_token', getHashParams()['access_token']);
+        }
+
+        document.addEventListener("keypress", (e) => {
+            sendToFrame(e.key);
+        });
+
+        function sendToFrame(msg) {
+            if (iframeTop && iframeTop.contentWindow) {
+                iframeTop.contentWindow.postMessage(msg, "*");
+            }
+
+            if (iframeBottom && iframeBottom.contentWindow) {
+                iframeBottom.contentWindow.postMessage(msg, "*");
+            }
+        }
+    </script>
+</body>
+
 </html>

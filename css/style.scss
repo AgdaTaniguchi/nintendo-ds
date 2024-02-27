@@ -40,9 +40,11 @@ body {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 9fr 1fr;
     grid-template-rows: 1fr;
     .center {
+        border-left: 1px solid rgba(0, 0, 0, 0.3);
+        border-right: 1px solid rgba(0, 0, 0, 0.3);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -79,12 +81,12 @@ body {
         position: relative;
         .status {
             position: absolute;
-            left: 20px;
-            width: 30%;
+            padding-left: 20px;
+            width: 100%;
             height: 100%;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             .status-led {
                 height: 60%;
                 width: 4px;
@@ -121,6 +123,19 @@ body {
     }
 }
 
+@keyframes shake {
+    0% { transform: translate(-8px, -6px); }
+    15% { transform: translate(8px, 1px); }
+    30% { transform: translate(-4px, -2px); }
+    60% { transform: translate(-2px, -7px); }
+    75% { transform: translate(0px, -5px); }
+    100% { transform: translate(7px, -3px); }
+}
+
+.shake-animation {
+    animation: shake 0.2s 0s infinite linear alternate;
+}
+
 .container {
     display: grid;
     grid-template-rows: 300px 21px 300px;
@@ -148,6 +163,13 @@ body {
                 width: 100%;
                 aspect-ratio: 16 / 9;
                 background: $screenColor;
+                display: flex;
+                iframe {
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
             }
             .group-audio {
                 width: fit-content;

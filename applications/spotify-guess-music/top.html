@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Name</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container center" id="initial-screen">
+        <h1>SPOTIFY:<br>GUESS THE<br>MUSIC</h1>
+    </div>
+    <div class="container center" id="welcome-screen">
+        <img class="avatar" src="media/marceline.png" />
+        <h2>Welcome NICK</h2>
+        <span>Wins: 12/13</span>
+    </div>
+    <div class="container" id="guess-song-screen">
+        <div class="image-background">
+            <span id="playlist-name">Playlist name</span>
+        </div>
+        <div class="music-container">
+            <span>What is this song?</span>
+            <div class="music-progress"></div>
+        </div>
+    </div>
+    <div class="container" id="final-screen">
+        <div class="image-background">
+            <span id="playlist-name">Playlist name</span>
+        </div>
+        <div class="final-container">
+            <img class="avatar" src="media/marceline.png" />
+            <p>You’ve already got <span class="total">23</span> songs from this playlist right and got <span class="wrong">2</span> wrong</p>
+        </div>
+    </div>
+    <script src="script-top.js"></script>
+</body>
+</html>

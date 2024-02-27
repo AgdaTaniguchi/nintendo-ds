@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Name</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container center" id="start-screen">
+        <button class="large " onclick="">Classic Mode</button>
+        <button class="large solid" onclick="signInSpotify()">Sign In</button>
+    </div>
+    <div class="container container-wide" id="playlists-screen">
+        <!-- <input type="search" name="" id=""> -->
+        <span>Choose a playlist:</span>
+        <div class="playlists">
+            <!-- <div class="playlist-item">Mamamoo</div>
+            <div class="playlist-item">Karaokê</div>
+            <div class="playlist-item">BRazuca Songs</div>
+            <div class="playlist-item">Pop</div>
+            <div class="playlist-item">All the favs</div> -->
+        </div>
+    </div>
+    <div class="container guess-stage" id="music-screen">
+        <div class="flex">
+            <h3>Tentative <span id="current-tentative">1</span>/5</h3>
+            <button class="icon" onclick="playMusic()"><img src="media/play-icon.svg"></button>
+        </div>
+        <label for="input-guess">Type your guess:</label>
+        <div class="input-box">
+            <input id="input-guess" type="text" autocomplete="off">
+            <div id="music-hints">
+                <!-- <div><span>Music 01</span></div>
+                <div><span>Music 02</span></div>
+                <div><span>Music 03</span></div>
+                <div><span>Music 04</span></div>
+                <div><span>Music 05</span></div> -->
+            </div>
+        </div>
+        <div class="flex">
+            <button class="" onclick="addTentative()">Skip</button>
+            <button class="solid" onclick="guessMusic()">Enter</button>
+        </div>
+    </div>
+    <div class="container" id="end-screen">
+        <h2>Congratulations, you got it right!</h2>
+        <span>Total score: 32/33</span>
+        <button class="" onclick="">Next music</button>
+        <button class="solid" onclick="">Change Playlist</button>
+    </div>
+    <script src="script-bottom.js"></script>
+</body>
+</html>
